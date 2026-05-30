@@ -1,0 +1,53 @@
+{
+  "skill_name": "taylor-diagram",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "画一个泰勒图对比我的回归模型",
+      "should_trigger": true,
+      "expected_output": "A Taylor diagram PNG/PDF showing multiple model markers on a polar plot with CRMSD contours",
+      "files": [],
+      "expectations": [
+        "The output includes a Taylor diagram figure",
+        "The TaylorDiagram class is used with add_model() and plot()",
+        "CRMSD contour arcs are displayed",
+        "The reference (observed) point is marked"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Create a Taylor diagram comparing SVR, RF, and XGBoost predictions",
+      "should_trigger": true,
+      "expected_output": "A publication-quality Taylor diagram with 3 model markers and a reference point",
+      "files": [],
+      "expectations": [
+        "Three model markers are plotted",
+        "Each model has a distinct marker and color",
+        "The diagram includes a title and legend"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "计算各模型的标准差、相关系数和中心化均方根误差",
+      "should_trigger": true,
+      "expected_output": "A formatted statistics table with Std, Corr, and CRMSD columns",
+      "files": [],
+      "expectations": [
+        "compute_taylor_stats() or get_stats_table() is used",
+        "Output includes standard deviation, correlation, and CRMSD values",
+        "The observed reference row shows Std=1.0, Corr=1.0, CRMSD=0.0"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "用SkillMetrics库画泰勒图",
+      "should_trigger": true,
+      "expected_output": "A Taylor diagram created via the SkillMetrics library API",
+      "files": [],
+      "expectations": [
+        "plot_taylor_skillmetrics() or sm.taylor_diagram() is used",
+        "The diagram follows SkillMetrics array ordering convention"
+      ]
+    }
+  ]
+}
